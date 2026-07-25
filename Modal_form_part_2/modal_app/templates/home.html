@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block home %}
+<h1>This is home</h1>
+
+<div style="width: 50%; margin:auto; margin-top: 1cm; ">
+    <form method="POST">
+        {% csrf_token %}
+        {{std|crispy}}
+
+        <input type="submit" class="btn btn-primary" value="submit">
+    </form>
+</div>
+{% endblock home %}
