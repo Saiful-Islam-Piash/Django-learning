@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Add profiles{% endblock title %}
+{% block add_profiles %}
+<h1>this is add profile</h1>
+
+
+<form method="post" style="width: 50%; margin: auto;  ">
+    {% csrf_token %}
+
+    {{profile_form|crispy}}
+
+    <button
+        type="submit"
+        class="btn btn-primary"
+    >
+        Submit
+    </button>
+    
+</form>
+
+{% endblock add_profiles %}
