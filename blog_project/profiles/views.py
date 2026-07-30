@@ -12,4 +12,4 @@ def add_profiles(request):
     else:
         profile_form=PofileForm()
 
-    return render(request,'add_profiles.html',{'profile_form':profile_form})
+    return render(request,'add_profiles.html',{'form':profile_form})
