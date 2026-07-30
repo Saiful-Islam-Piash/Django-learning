@@ -18,7 +18,7 @@ def edit_post(request,id):
     post=Posts.objects.get(pk=id)
     post_form=PostForm(instance=post)
     if request.method=='POST':
-        post_form=PostForm(request.POST ,instance=post)
+        post_form=PostForm(request.POST,instance=post)
         if post_form.is_valid():
             post_form.save()
             return redirect('home')
