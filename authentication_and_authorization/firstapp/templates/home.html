@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,8 +14,13 @@
 
     <div class="container " >
       <form class="w-50 " style="margin:auto;" novalidate method="post">
-       {{form|crispy}}
           {% csrf_token %}
+          <!--{{form|crispy}}-->
+          {% for fm in form %}
+          {{fm.label_tag}}
+          {{fm}}
+          {{fm.errors }}
+          {% endfor %}
         <button
           type="submit"
           class="btn btn-primary"
