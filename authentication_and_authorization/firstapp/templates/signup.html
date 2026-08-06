@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block sinup %}
+ {% if messages %}
+   {% for m in messages %}
+<small {% if m.tags %}
+class="{{m.tags}}"
+
+{% endif %} > {{m}} </small>
+
+   {% endfor %}
+   {% endif %}
+  
+    <div class="container " >
+      <form class="w-50 " style="margin:auto;" novalidate method="POST"  >
+        <h1>Signup </h1>
+          {% csrf_token %}
+          <!--{{form|crispy}}-->
+          {% for fm in form %}
+          {{fm.label_tag}}
+          {{fm}}
+          {{fm.errors }}
+          {% endfor %}
+        <button
+          type="submit"
+          class="btn btn-primary"
+        >
+          Submit
+        </button>
+        
+      </form>
+    </div>
+    
+{% endblock sinup %}

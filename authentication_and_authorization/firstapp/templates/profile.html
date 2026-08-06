@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block profile %}
+
+<h1>welcome to profile {{user.first_name}}</h1>
+
+<p><a href="{%url 'passchange' %}"></a></p>
+
+{% endblock profile %}
