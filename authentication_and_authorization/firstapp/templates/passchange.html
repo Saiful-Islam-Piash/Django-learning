@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
 {% block passchange %}
   <div class="container " >
       <form class="w-50 " style="margin:auto; margin-top:10%;" novalidate method="POST"  >
@@ -14,8 +16,9 @@
           {% for fm in form %}
           {{fm.label_tag}}
           {{fm}}
-          {{fm.errors |striptags }}
+          <p class='text-danger' >{{fm.errors |striptags }}</p>
           {% endfor %}        
+          <br>
           <button button type="submit"class="btn my-3 btn-warning">
           Login
         </button>
