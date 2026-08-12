@@ -1,0 +1,13 @@
+from django import forms 
+from .models import Posts
+
+class PostForm(forms.ModelForm):
+    
+    class Meta:
+        model = Posts
+        fields = "__all__"
+
+        widgets = {
+            "category": forms.CheckboxSelectMultiple(),
+        }
+    
