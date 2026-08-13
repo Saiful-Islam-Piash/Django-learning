@@ -16,16 +16,14 @@
       <div class="card-body">
         <h5 class="card-title">Title: {{i.title}}</h5>
         <p class="card-text"> {{i.content |truncatechars:200}} </p>
-         <p> Author: {{i.author.name}} </p>
+         <p> Author: {{i.author.first_name}} {{i.author.last_name}}</p>
        {% for j in i.category.all %}
        
         <button class="btn btn-info btn-sm m-2 " disabled > {{j}} </button>
        {% endfor %}
 
     <p> 
-        <a href="{%url 'edit_post' i.id %}" class="btn btn-warning">Edit</a>
-       <a href="{%url 'delete_post' i.id %}" class="btn btn-danger">Delete</a>
-    </p>
+
       </div>
     </div>
   </div>
